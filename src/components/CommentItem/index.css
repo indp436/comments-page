@@ -104,10 +104,9 @@
 .active-like {
   color: #0b69ff;
 }
-.delete-button {
+.button {
   background-color: transparent;
-  margin: 0;
   border: 0;
-  padding: 0;
+
   outline: 0;
 }

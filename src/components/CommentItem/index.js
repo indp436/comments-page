@@ -31,20 +31,21 @@ const Create = props => {
       </div>
       <p className="comment-typed">{comment}</p>
       <div className="like-container">
-        <div className="like-box delete-button" type="button">
+        <div className="like-box">
           <img
             src={likedImgUrl}
             className={`like-img ${likeButtonColor}`}
             alt={likeButtonAlt}
           />
           <button
-            className={` ${likeButtonColor} delete-button like-word`}
+            className={` ${likeButtonColor} button like-word`}
             onClick={clickedOnLike}
+            type="button"
           >
             {likeButtonText}
           </button>
         </div>
-        <button className="delete-button" type="button" testid="delete">
+        <button className="button" type="button" testid="delete">
           <img
             src="https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png"
             className="like-img"
