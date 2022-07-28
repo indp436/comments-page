@@ -17,11 +17,13 @@ const Create = props => {
     ? 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
     : 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
 
+  const likeButtonAlt = isLiked ? 'liked' : 'like'
+
   const likeButtonColor = isLiked ? 'active-like' : ''
 
   const likeButtonText = isLiked ? 'Liked' : 'Like'
   return (
-    <div className="comment-box">
+    <li className="comment-box">
       <div className="name-container">
         <p className={`name-circle ${color}`}>{firstLetter}</p>
         <p className="name">{name}</p>
@@ -29,24 +31,30 @@ const Create = props => {
       </div>
       <p className="comment-typed">{comment}</p>
       <div className="like-container">
-        <div className="like-box">
+        <div className="like-box delete-button" type="button">
           <img
             src={likedImgUrl}
             className={`like-img ${likeButtonColor}`}
-            onClick={clickedOnLike}
-            alt="like"
+            alt={likeButtonAlt}
           />
-          <p className={`like-word ${likeButtonColor}`}>{likeButtonText}</p>
+          <button
+            className={` ${likeButtonColor} delete-button like-word`}
+            onClick={clickedOnLike}
+          >
+            {likeButtonText}
+          </button>
         </div>
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png"
-          className="like-img"
-          alt="delete"
-          onClick={onDeleteClicked}
-        />
+        <button className="delete-button" type="button" testid="delete">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png"
+            className="like-img"
+            alt="delete"
+            onClick={onDeleteClicked}
+          />
+        </button>
       </div>
       <hr />
-    </div>
+    </li>
   )
 }
 

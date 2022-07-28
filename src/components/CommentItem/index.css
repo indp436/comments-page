@@ -50,6 +50,7 @@
   margin: 0;
   padding: 0;
   margin-top: 15px;
+  list-style: none;
 }
 .name-circle {
   padding: 0;
@@ -70,7 +71,6 @@
   margin-left: 10px;
   font-weight: 700;
   color: #334155;
-  border: 1px solid black;
   font-size: 13px;
 }
 .time {
@@ -103,4 +103,11 @@
 }
 .active-like {
   color: #0b69ff;
+}
+.delete-button {
+  background-color: transparent;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
 }

@@ -120,16 +120,20 @@ class Comments extends Component {
           <p className="comments-no">{lengthOfCommentList}</p>
           <p className="comment-word">Comments</p>
         </div>
-        {commentsList.map(each => (
-          <Create
-            details={each}
-            color={initialContainerBackgroundClassNames[each.randomNumber - 1]}
-            key={each.id}
-            lengthOfCommentList={lengthOfCommentList}
-            toggledLike={this.toggledLike}
-            onDelete={this.onDelete}
-          />
-        ))}
+        <ul>
+          {commentsList.map(each => (
+            <Create
+              details={each}
+              color={
+                initialContainerBackgroundClassNames[each.randomNumber - 1]
+              }
+              key={each.id}
+              lengthOfCommentList={lengthOfCommentList}
+              toggledLike={this.toggledLike}
+              onDelete={this.onDelete}
+            />
+          ))}
+        </ul>
       </div>
     )
   }
